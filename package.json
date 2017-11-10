@@ -1,0 +1,32 @@
+{
+  "name": "nodebb-plugin-ns-login",
+  "version": "2.3.0",
+  "description": "External login check for your NodeBB. Provides API endpoint for user login.",
+  "main": "./plugin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BonnierNews/bbm-ul-nodebb-ns-login.git"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "login",
+    "secure",
+    "check",
+    "simple"
+  ],
+  "author": "Nicolas Siver",
+  "license": "MIT",
+  "homepage": "https://github.com/BonnierNews/bbm-ul-nodebb-ns-login#readme",
+  "dependencies": {
+    "async": "^2.1.5",
+    "express-brute": "^1.0.1",
+    "moment": "^2.18.0"
+  },
+  "nbbpm": {
+    "compatibility": "^0.9.0 || ^1.0.0"
+  }
+}
