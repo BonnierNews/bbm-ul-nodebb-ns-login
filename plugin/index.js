@@ -93,15 +93,17 @@
                                 userObject = payload.user;
                                 userObject['email:confirmed'] = parseInt(payload.secure['email:confirmed']);
 
-                                if(!userObject['email:confirmed'])
-                                    return next(new Error('EmailNotVerified'));
-
                                 passwordUtil.compare(password, payload.secure.password, next);
                             },
                             function (passwordMatch, next) {
                                 if (!passwordMatch) {
                                     return next(new Error('Invalid Password'));
                                 }
+
+                                if(!userObject['email:confirmed']) {
+                                    return next(new Error('EmailNotVerified'));
+                                }
+
                                 next(null, userObject);
                             }
                         ], function (error, user) {
